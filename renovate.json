@@ -1,0 +1,19 @@
+{
+  "extends": [
+    "config:base",
+    ":gitSignOff",
+    ":semanticCommits"
+  ],
+  "automerge": true,
+  "labels": [
+    "dependencies"
+  ],
+  "lockFileMaintenance": {
+    "enabled": true
+  },
+  "platformAutomerge": true,
+  "postUpdateOptions": [
+    "gomodTidy",
+    "gomodUpdateImportPaths"
+  ]
+}
