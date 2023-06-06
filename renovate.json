@@ -1,8 +1,11 @@
 {
   "extends": [
     "config:base",
+    ":automergeAll",
     ":gitSignOff",
-    ":semanticCommits"
+    ":semanticCommits",
+    "docker:pinDigests",
+    "regexManagers:githubActionsVersions"
   ],
   "automerge": true,
   "labels": [

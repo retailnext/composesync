@@ -48,7 +48,7 @@ tools such as Renovate supporting update maintenance out of the box.
     docker run -it --rm \
     --volume $HOME/.config/gcloud:/home/appuser/.config/gcloud:ro \
     --volume `pwd`/example:/example:ro \
-    retailnext/composesync \
+    ghcr.io/retailnext/composesync \
     --regsync-config /example/regsync.yaml \
     /example/compose.yaml \
     us-west1-docker.pkg.dev/your-project/your-destination-artifact-registry
