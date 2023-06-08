@@ -41,9 +41,9 @@ services:
 
 var testExpectedTargetSuffixes = []string{
 	"cloud-spanner-emulator:1.5.4",
-	"elasticsearch:7.17.10@sha256:bc7ba1dc5067c5b3907b82c667a374cc987cd813501e1378ec74ccd1c577f787",
-	"jaegertracing/all-in-one@sha256:5d5c9d2d8c8cbb42f1db4aac1f1f8487bac63da6802004d0da8580fc0c7311a1",
-	"localstack:2.0.2@sha256:2b4ec60261238bfc9573193380724ed4b9ee9fa0f39726275cd8feb48a254219",
+	"elasticsearch:7.17.10",
+	"jaegertracing/all-in-one",
+	"localstack:2.0.2",
 	"ubuntu:22.04",
 }
 
