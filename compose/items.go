@@ -63,19 +63,6 @@ func (d document) makeItems(targetRepos []string) SyncItems {
 	return result
 }
 
-func splitRef(ref string) (name, tagAndOrDigest string) {
-	var splitAt int = -1
-	if tagIdx := strings.Index(ref, ":"); tagIdx > 0 {
-		splitAt = tagIdx
-	} else if digestIdx := strings.LastIndex(ref, "@"); digestIdx > 0 {
-		splitAt = digestIdx
-	}
-	if splitAt >= 0 {
-		return ref[:splitAt], ref[splitAt:]
-	}
-	return ref, ""
-}
-
 func dropHostname(ref string) string {
 	ref = strings.TrimPrefix(ref, "docker.io/")
 	ref = strings.TrimPrefix(ref, "library/")
@@ -89,19 +76,13 @@ func dropHostname(ref string) string {
 	return ref
 }
 
-func (s service) destNameWithoutTagOrDigest() string {
-	var name string = s.SyncName
-	if name == "" {
-		name = s.Image
-	}
-	name = dropHostname(name)
-	name, _ = splitRef(name)
-	return name
-}
-
 func (s service) item() (src, dest string) {
 	src = s.Image
-	_, tagAndOrDigest := splitRef(src)
-	dest = s.destNameWithoutTagOrDigest() + tagAndOrDigest
+	// If there is a digestFragment in the regsync target it won't copy the tag
+	destName, destTagFragment, _ := splitRef(dropHostname(src))
+	if s.SyncName != "" {
+		destName, _, _ = splitRef(s.SyncName)
+	}
+	dest = destName + destTagFragment
 	return
 }
