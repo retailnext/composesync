@@ -10,7 +10,7 @@ COPY ./ ./
 
 RUN CGO_ENABLED=0 go build -o /go/bin/composesync -trimpath -ldflags="-s -w" .
 
-FROM ghcr.io/regclient/regsync:edge-alpine@sha256:2b7cd5e54b4c3142746e0f9ce4391c32991e9a2f18cbcfbfebaa7607fdc15b34
+FROM ghcr.io/regclient/regsync:edge-alpine@sha256:34f9c1cd3198abfc44284cff4bf067a52eef8096e77161df8c587d8a3c463e8b
 
 COPY --from=build /go/bin/composesync /usr/local/bin/
 
