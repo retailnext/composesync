@@ -22,6 +22,10 @@ import (
 	"gopkg.in/yaml.v3"
 )
 
+func (d Document) PrintRegSyncConfig() error {
+	return d.save(os.Stdout)
+}
+
 func (d Document) save(w io.Writer) error {
 	return yaml.NewEncoder(w).Encode(d)
 }
