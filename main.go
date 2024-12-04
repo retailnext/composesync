@@ -110,8 +110,9 @@ func main() {
 		logger.Fatal("failed to make regsync config", zap.Error(err))
 	}
 	if cli.DryRun {
-		for _, item := range doc.Sync {
-			logger.Info("would copy", zap.String("source", item.Source), zap.String("target", item.Target))
+		err = doc.PrintRegSyncConfig()
+		if err != nil {
+			logger.Fatal("failed to generate output of regsync config", zap.Error(err))
 		}
 		return
 	}
