@@ -10,7 +10,7 @@ on:
 env:
   # renovate: datasource=github-releases depName=golangci/golangci-lint versioning=semver-coerced
   GOLANGCI_LINT_VERSION: "v2.2.2"
-  IMAGE_NAME: "${{ github.repository }}"
+  IMAGE: "ghcr.io/${{ github.repository }}"
   REGISTRY: "ghcr.io"
   TEST_TAG: "ghcr.io/${{ github.repository }}:test"
 permissions:
