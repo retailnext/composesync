@@ -2,7 +2,7 @@
   "extends": [
     "config:best-practices",
     ":automergeAll",
-    ":enablePrecommit",
+    ":enablePreCommit",
     ":gitSignOff",
     ":maintainLockFilesWeekly",
     ":semanticCommits",
