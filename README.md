@@ -12,7 +12,7 @@ tools such as Renovate supporting update maintenance out of the box.
 
 1.  Populate a Docker Compose yaml file with services that reference images.
 
-    You can specify a name for the image to be synced to. By default, the 
+    You can specify a name for the image to be synced to. By default, the
     target name will be the same as the source with the registry hostname
     removed.
 
@@ -22,8 +22,8 @@ tools such as Renovate supporting update maintenance out of the box.
         image: "gcr.io/distroless/python3-debian11:nonroot@sha256:cc7021d6bd5aae9cdd976ae4b185cc59d5792b18aa5e18345dbf9b34d6b3f5a0"
         x-composesync-name: "python3"
     ```
-    
-2.  If any registry authentication configuration is required, create a 
+
+2.  If any registry authentication configuration is required, create a
     [regsync configuration file](https://github.com/regclient/regclient/blob/main/docs/regsync.md#configuration-file)
     and specify it with the `--regsync-config=` flag. The `creds` section will be copied from this file.
 
@@ -39,8 +39,8 @@ tools such as Renovate supporting update maintenance out of the box.
 
 3.  Run composesync as a container in a CICD workflow.
 
-    For local testing, you can mount in your Google Cloud configuration 
-    as a read-only volume to allow `docker-credential-gcr` to find your 
+    For local testing, you can mount in your Google Cloud configuration
+    as a read-only volume to allow `docker-credential-gcr` to find your
     "application default credentials" populated via
     `gcloud auth login --update-adc`.
 
