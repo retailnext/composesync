@@ -13,6 +13,8 @@ env:
   IMAGE_NAME: "${{ github.repository }}"
   REGISTRY: "ghcr.io"
   TEST_TAG: "ghcr.io/${{ github.repository }}:test"
+permissions:
+  contents: read
 jobs:
   tests:
     name: Tests
