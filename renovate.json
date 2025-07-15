@@ -1,20 +1,35 @@
 {
   "extends": [
-    "config:recommended",
+    "config:best-practices",
     ":automergeAll",
+    ":enablePrecommit",
     ":gitSignOff",
+    ":maintainLockFilesWeekly",
     ":semanticCommits",
-    "docker:pinDigests",
+    "customManagers:dockerfileVersions",
     "customManagers:githubActionsVersions"
   ],
-  "automerge": true,
   "labels": [
     "dependencies"
   ],
-  "lockFileMaintenance": {
-    "enabled": true
-  },
-  "platformAutomerge": true,
+  "packageRules": [
+    {
+      "groupName": "golang",
+      "matchDatasources": [
+        "golang-version"
+      ],
+      "rangeStrategy": "bump"
+    },
+    {
+      "groupName": "golang",
+      "matchDatasources": [
+        "docker"
+      ],
+      "matchPackageNames": [
+        "golang"
+      ]
+    }
+  ],
   "postUpdateOptions": [
     "gomodTidy",
     "gomodUpdateImportPaths"
