@@ -20,7 +20,7 @@ repos:
     hooks:
       - id: yamlfmt
   - repo: https://github.com/golangci/golangci-lint
-    rev: v2.2.2
+    rev: v2.6.1
     hooks:
       - id: golangci-lint-full
         args: [--timeout=10m]
