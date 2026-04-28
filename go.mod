@@ -1,6 +1,6 @@
 module github.com/retailnext/composesync
 
-go 1.24.5
+go 1.26.2
 
 require (
 	github.com/alecthomas/kong v1.15.0
