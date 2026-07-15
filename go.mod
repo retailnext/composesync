@@ -3,7 +3,7 @@ module github.com/retailnext/composesync
 go 1.26.5
 
 require (
-	github.com/alecthomas/kong v1.15.0
+	github.com/alecthomas/kong v1.16.0
 	go.uber.org/multierr v1.11.0
 	go.uber.org/zap v1.28.0
 	gopkg.in/yaml.v3 v3.0.1
