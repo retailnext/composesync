@@ -12,7 +12,7 @@ COPY --parents ./compose ./regsync ./main.go ./
 
 RUN CGO_ENABLED=0 go build -o /go/bin/composesync -trimpath -ldflags="-s -w" .
 
-FROM ghcr.io/regclient/regsync:alpine@sha256:d27b054935126029e08518b774af477cb88181dd03938fb54c0a1b98110bf560
+FROM ghcr.io/regclient/regsync:alpine@sha256:54f59b04543817ffdcb67e6628396f05a83a0781a72f2e4c106d04886f59e1d1
 
 COPY --from=build /go/bin/composesync /usr/local/bin/
 
