@@ -26,7 +26,9 @@ type Document struct {
 
 type Host struct {
 	Name       string `yaml:"registry"`
-	CredHelper string `yaml:"credHelper"`
+	User       string `yaml:"user,omitempty"`
+	Pass       string `yaml:"pass,omitempty"`
+	CredHelper string `yaml:"credHelper,omitempty"`
 	RepoAuth   bool   `yaml:"repoAuth"`
 }
 
